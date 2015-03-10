@@ -9,7 +9,7 @@ class Config(object):
     SECRET_KEY = 'Thisismysecretkey'
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'DATABASE_URL',
-        'postgresql+psycopg2://localhost/app')
+        'postgresql+psycopg2://peg:1234@localhost/app')
     print SQLALCHEMY_DATABASE_URI
 
 
@@ -19,7 +19,7 @@ class TestingConfig(Config):
     PRESERVE_CONTEXT_ON_EXCEPTION = False
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'DATABASE_URL',
-        'postgresql+psycopg2://localhost/testapp')
+        'postgresql+psycopg2://peg:1234@localhost/testapp')
     print SQLALCHEMY_DATABASE_URI
 
 
